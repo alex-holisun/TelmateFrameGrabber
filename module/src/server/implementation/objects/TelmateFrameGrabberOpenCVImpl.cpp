@@ -165,7 +165,7 @@ void TelmateFrameGrabberOpenCVImpl::process(cv::Mat &mat) {
       try {
         cv::imwrite(fullpath.c_str(), mat, params);
         std::string runpath = "/usr/bin/send_frames '" + fullpath + "' " + this->epName;
-        system(runpath);
+        system(runpath.c_str());
       }
       catch (...) {
         GST_ERROR("::queueHandler() imgwrite() failed.");
