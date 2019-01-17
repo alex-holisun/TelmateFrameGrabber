@@ -167,7 +167,7 @@ void TelmateFrameGrabberOpenCVImpl::process(cv::Mat &mat) {
         std::string runpath = "/usr/bin/send_frames '";
         strcat(runpath, fullpath.c_str());
         strcat(runpath, "' ");
-        strcat(runpath,  this->epName);
+        strcat(runpath,  this->epName.c_str());
         
         system(runpath.c_str());
       }
